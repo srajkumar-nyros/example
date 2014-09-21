@@ -1,0 +1,43 @@
+<%= form_for @htmlpage, :html => { :class => "form-horizontal htmlpage" } do |f| %>
+
+  <div class="form-group">
+    <%= f.label :library, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :library, :class => 'form-control', :placeholder => "Please enter JS library links here seperated with ','", :value => @input1 %>
+    </div>
+    <div style="width:100%;text-align:center;">
+    <%=f.error_span(:library) %></div>
+  </div>
+  <div class="form-group">
+    <%= f.label :css, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :css, :class => 'form-control', :style => "height:115px;", :placeholder => "Please enter CSS content without STYLE tag.", :value => @input2 %>
+    </div>
+    <%=f.error_span(:css) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :js, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :js, :class => 'form-control', :style => "height:115px;", :placeholder => "Please enter JS content with ready function.", :value => @input3 %>
+    </div>
+    <%=f.error_span(:js) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :html, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_area :html, :class => 'form-control', :style => "height:115px;", :placeholder => "Please enter contant inside BODY tag (BODY tag is taken automatically).", :value => @input4 %>
+    </div>
+    <%=f.error_span(:html) %>
+  </div>
+<%=hidden_field(:dat, :dataa, :value => @output) %>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit "SAVE", :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.preview")),
+                "javascript:void(0)", :class => 'btn btn-default', onclick: "$('#output_body').val($('#dat_dataa').val());$('#close').show();" %>
+      <%= link_to t('.cancel', :default => t("helpers.links.reset")),
+                root_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>
