@@ -54,7 +54,7 @@
         <%= link_to image_tag("cross.png"), 'javaScript:void(0)', :id => "close" , onclick: "$('#close').hide();"%>
         <br/><br/><br/>
         <%= text_area(:output, :body, cols: 130, rows: 30, :value => "", readonly:"readonly") %>
-        <%= link_to image_tag("download.png"), 'uploads/data.html', download: "data.html" %>
+        <%= link_to image_tag("download.png"), '/uploads/data.html', download: "data.html" %>
       </div>
     </div>
   </div>
