@@ -50,8 +50,8 @@
      </div>
     <div style="width:100%;min-height:700px;position:absolute;display:none;", id="close">
       <div style="width:100%;min-height:700px;position:absolute;background-color:black;opacity:0.6;"></div>
-      <div style="width:100%;min-height:700px;position:absolute;text-align:center;" onclick="$('#close').hide();">
-        
+      <div style="width:100%;min-height:700px;position:absolute;text-align:center;">
+        <%= link_to image_tag("cross.png"), 'javaScript:void(0)', :id => "close" , onclick: "$('#close').hide();"%>
         <br/><br/><br/>
         <%= text_area(:output, :body, cols: 130, rows: 30, :value => "", readonly:"readonly") %>
         <%= link_to image_tag("download.png"), '/uploads/data.html', download: "data.html" %>
